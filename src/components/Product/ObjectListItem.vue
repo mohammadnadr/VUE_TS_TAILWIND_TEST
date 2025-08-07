@@ -13,19 +13,19 @@
     <div class="px-6 py-4 flex text-sm font-medium gap-1">
       <button
         @click="detailProduct(product.id)"
-        class="border px-2 py-1 text-indigo-600 hover:text-indigo-900"
+        class="btn-primary"
       >
         جزییات
       </button>
       <button
         @click="editProduct(product.id)"
-        class="border px-2 py-1 text-indigo-600 hover:text-indigo-900"
+        class="btn-secondary"
       >
         ویرایش
       </button>
       <button
         @click="confirmDelete(product.id)"
-        class="border px-2 py-1 text-red-600 hover:text-red-900"
+        class="btn-error"
       >
         حذف
       </button>

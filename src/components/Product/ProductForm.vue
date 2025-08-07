@@ -82,12 +82,13 @@ const handleSubmit = async () => {
       // ویرایش محصول
       const response = await axios.put(`https://api.restful-api.dev/objects/${id}`, payload);
       alert('محصول با موفقیت ویرایش شد');
-      router.push('/'); // مسیر بعد از ویرایش
+      router.push({ name: 'objectDetail', params: { id: response.data.id } });
     } else {
       // ساخت محصول جدید
-      const response = await axios.post(`https://api.restful-api.dev/objects+`, payload); // در صورت نیاز، عدد را تغییر دهید.
+      const response = await axios.post(`https://api.restful-api.dev/objects`, payload); // در صورت نیاز، عدد را تغییر دهید.
+
       alert('محصول جدید ساخته شد');
-      router.push('/'); // مسیر بعد از ساخت
+      router.push({ name: 'objectDetail', params: { id: response.data.id } });
     }
   } catch (error) {
     console.error('خطا در ارسال اطلاعات:', error);
